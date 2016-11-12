@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.author }}</title>
 
     {% include meta.html %}
 
@@ -10,7 +10,8 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.author }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="icon" href="{{ site.baseurl }}/images/favicon.jpg" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -23,12 +24,12 @@
 
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+            <p class="site-author">{{ site.author }}</p>
           </div>
 
           <nav>
             <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+            <a href="{{ site.baseurl }}/about-me">About me</a>
           </nav>
         </header>
       </div>
@@ -42,6 +43,9 @@
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
+          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}, licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0
+              International License</a>.</p>
         </footer>
       </div>
     </div>
